@@ -80,6 +80,7 @@
         background-repeat: no-repeat;
         min-height: 600px;
         grid-area: section;
+        max-height: 1000px;
     }
     
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -165,7 +166,7 @@
         border-radius: 20px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
         margin: auto;
-        min-width: 180px
+        margin-top: 22px;
     }
     /* card container */
     
@@ -180,6 +181,8 @@
     .cards>div {
         width: 70%;
         margin: auto;
+        margin-top: 22px;
+        min-width: 180px;
     }
     
     .trainers p {
@@ -201,7 +204,7 @@
         }
     }
     
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 730px) {
         section {
             grid-template-rows: 1fr;
             grid-template-columns: 1fr;
@@ -225,7 +228,7 @@
         }
     }
     
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 520px) {
          :root {
             --Hfont: 2rem;
             --pfont: 1rem;
