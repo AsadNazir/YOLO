@@ -1,0 +1,265 @@
+    body {
+        box-sizing: border-box;
+        margin: 0%;
+        padding: 0;
+        font-family: 'Ubuntu', sans-serif;
+        height: 1000vh;
+    }
+    
+     :root {
+        --Hfont: 2.5rem;
+        --pfont: 1.4rem;
+        --btnfont: 1.2rem;
+        --mcolor: blue;
+    }
+    
+    nav {
+        width: 100%;
+        background-color: white;
+        position: sticky;
+        top: 0;
+        z-index: 90;
+        box-shadow: 0px 2px 16px -10px rgb(100 100 100);
+    }
+    
+    nav>div {
+        width: 95%;
+        max-width: 1500px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: var(--mcolor);
+        margin: 0 auto;
+        /* border: 1px solid black; */
+        justify-content: space-between;
+    }
+    
+    nav h1 {
+        font-size: var(--Hfont);
+        letter-spacing: 4px;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    nav li {
+        list-style: none;
+        height: 100%;
+    }
+    
+    nav a {
+        padding: 0em 1.5em;
+        color: var(--mcolor);
+        text-decoration: none;
+        font-size: var(--btnfont);
+    }
+    
+    nav a :hover {
+        background-color: red;
+    }
+    /* main styling */
+    
+    main {
+        display: grid;
+        grid-template-areas: 'section' 'train';
+        max-width: 1550px;
+        margin: 0 auto;
+    }
+    
+    section {
+        display: grid;
+        grid-template-columns: 55% 45%;
+        height: 93vh;
+        background: url(./sports1.jpg);
+        background-position: left;
+        background-repeat: no-repeat;
+        min-height: 600px;
+        grid-area: section;
+    }
+    
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        .left {
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+    }
+    
+    .left {
+        background-color: rgba(255, 255, 255, 0.411);
+        padding: 0 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+        clip-path: polygon(89% 0, 100% 50%, 89% 100%, 0 100%, 0 0);
+    }
+    
+    .left h1 {
+        font-size: calc(1.1*var(--Hfont));
+        font-weight: bolder;
+        color: darkblue;
+        margin: 0;
+    }
+    
+    .left p {
+        font-size: var(--pfont);
+        margin: 3em 0;
+        padding-right: 5em;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .btn a {
+        text-decoration: none;
+        color: white;
+        background-color: var(--mcolor);
+        padding: 0.5em 2.8em;
+        font-size: var(--btnfont);
+        margin-right: 1em;
+        border-radius: 2em;
+    }
+    
+    .btn a :hover {
+        background-color: white;
+    }
+    /* trainers section */
+    /* trainer conntainer */
+    
+    .trainers {
+        /* border: 2px solid green; */
+        width: 100%;
+        height: 100%;
+        margin-top: 2em;
+        grid-area: train;
+        display: grid;
+        grid-template-areas: 'h1' 'card';
+    }
+    /* ---------------------------------- */
+    
+    .cards img {
+        width: 100%;
+        border-radius: 50%;
+    }
+    
+    .htrainer {
+        grid-area: h1;
+        text-align: center;
+        color: var(--mcolor);
+    }
+    
+    .htrainer h1 {
+        font-size: var(--Hfont);
+    }
+    
+    .cards {
+        width: 80%;
+        /* border: 2px solid coral; */
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        margin: auto;
+        min-width: 180px
+    }
+    /* card container */
+    
+    .card_cont {
+        grid-area: card;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-content: center;
+    }
+    /* -------------------------------------- */
+    
+    .cards>div {
+        width: 70%;
+        margin: auto;
+    }
+    
+    .trainers p {
+        text-align: center;
+        font-size: var(--pfont);
+    }
+    
+    @media only screen and (max-width: 1200px) {
+        section {
+            background-position: center;
+        }
+    }
+    
+    @media only screen and (max-width: 870px) {
+         :root {
+            --Hfont: 2.2rem;
+            --pfont: 1.2rem;
+            --btnfont: 1rem;
+        }
+    }
+    
+    @media only screen and (max-width: 700px) {
+        section {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr;
+            clip-path: polygon(50% 100%, 100% 88%, 100% 0, 0 0, 0 88%);
+        }
+        .left {
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            align-items: center;
+        }
+        .left p {
+            text-align: center;
+            padding: 0;
+        }
+        .btn {
+            width: auto;
+        }
+        .card_cont {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 3em;
+        }
+    }
+    
+    @media only screen and (max-width: 500px) {
+         :root {
+            --Hfont: 2rem;
+            --pfont: 1rem;
+            --btnfont: 0.8rem;
+        }
+    }
+    
+    @media only screen and (max-width: 440px) {
+        .card_cont {
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+            grid-row-gap: 3em;
+        }
+        nav h1 {
+            padding: 10px 0;
+            margin: auto;
+        }
+        nav ul {
+            display: none;
+        }
+        .left h1 {
+            text-align: center;
+        }
+        .left {
+            padding: 0 1.5em;
+        }
+        .cards {
+            width: 70%;
+        }
+        .cards img {
+            width: 100%;
+        }
+        .cards>div {
+            width: 60%;
+            margin: auto;
+        }
+    }
