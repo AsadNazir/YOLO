@@ -1,268 +1,345 @@
-    body {
-        box-sizing: border-box;
-        margin: 0%;
-        padding: 0;
-        font-family: 'Ubuntu', sans-serif;
-        height: 1000vh;
-    }
-    
-     :root {
-        --Hfont: 2.5rem;
-        --pfont: 1.4rem;
-        --btnfont: 1.2rem;
-        --mcolor: blue;
-    }
-    
-    nav {
-        width: 100%;
-        background-color: white;
-        position: sticky;
-        top: 0;
-        z-index: 90;
-        box-shadow: 0px 2px 16px -10px rgb(100 100 100);
-    }
-    
-    nav>div {
-        width: 95%;
-        max-width: 1500px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        color: var(--mcolor);
-        margin: 0 auto;
-        /* border: 1px solid black; */
-        justify-content: space-between;
-    }
-    
-    nav h1 {
-        font-size: var(--Hfont);
-        letter-spacing: 4px;
-        font-weight: bold;
-        margin: 0;
-    }
-    
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    nav li {
-        list-style: none;
-        height: 100%;
-    }
-    
-    nav a {
-        padding: 0em 1.5em;
-        color: var(--mcolor);
-        text-decoration: none;
-        font-size: var(--btnfont);
-    }
-    
-    nav a :hover {
-        background-color: red;
-    }
-    /* main styling */
-    
-    main {
-        display: grid;
-        grid-template-areas: 'section' 'train';
-        max-width: 1550px;
-        margin: 0 auto;
-    }
-    
-    section {
-        display: grid;
-        grid-template-columns: 55% 45%;
-        height: 93vh;
-        background: url(./sports1.jpg);
-        background-position: left;
-        background-repeat: no-repeat;
-        min-height: 600px;
-        grid-area: section;
-        max-height: 1000px;
-    }
-    
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-        .left {
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-        }
-    }
-    
+body {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    height: 1000vh;
+}
+
+html {
+    font-size: 10px;
+}
+
+ :root {
+    --Hfont: 4.5rem;
+    --pfont: 2rem;
+    --btnfont: 1.8rem;
+    --mcolor: blue;
+}
+
+nav {
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    box-shadow: 0px 2px 16px -10px rgb(100 100 100);
+}
+
+nav>div {
+    width: 95%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--mcolor);
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+}
+
+nav h1 {
+    font-size: var(--Hfont);
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav li {
+    list-style: none;
+    height: 100%;
+}
+
+nav a {
+    padding: 0em 1.5em;
+    color: var(--mcolor);
+    text-decoration: none;
+    font-size: var(--btnfont);
+}
+
+nav a :hover {
+    background-color: red;
+}
+
+
+/* main styling */
+
+main {
+    display: grid;
+    grid-template-areas: 'section' 'train' 'story';
+    max-width: 1550px;
+    margin: 0 auto;
+    grid-row-gap: 10em;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: clamp(500px, 93vh, 1000px);
+    background: url(./sports1.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    grid-area: section;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     .left {
-        background-color: rgba(255, 255, 255, 0.411);
-        padding: 0 2em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        margin: 0;
-        clip-path: polygon(89% 0, 100% 50%, 89% 100%, 0 100%, 0 0);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
     }
-    
-    .left h1 {
-        font-size: calc(1.1*var(--Hfont));
-        font-weight: bolder;
-        color: darkblue;
-        margin: 0;
+}
+
+.left {
+    background-color: rgba(0, 0, 0, 0.452);
+    padding: 0 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    color: white;
+    clip-path: polygon(89% 0, 100% 50%, 89% 100%, 0 100%, 0 0);
+}
+
+.left h1 {
+    font-size: calc(1.1*var(--Hfont));
+    font-weight: bolder;
+    color: darkblue;
+    margin: 0;
+    text-shadow: 0px -1px 3px white;
+}
+
+.left p {
+    font-size: var(--pfont);
+    margin: 3em 0;
+    padding-right: 5em;
+}
+
+.btn {
+    width: 100%;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--mcolor);
+    padding: 0.5em 2.8em;
+    font-size: var(--btnfont);
+    margin-right: 1em;
+    border-radius: 2em;
+}
+
+.btn a :hover {
+    background-color: white;
+}
+
+
+/* trainers section */
+
+
+/* trainer conntainer */
+
+.trainers {
+    /* border: 2px solid green; */
+    width: 100%;
+    height: 100%;
+    margin-top: 2em;
+    grid-area: train;
+    display: grid;
+    grid-template-areas: 'h1' 'card';
+}
+
+.htrainer {
+    grid-area: h1;
+    text-align: center;
+    color: var(--mcolor);
+}
+
+.htrainer h1 {
+    font-size: var(--Hfont);
+    margin-top: 0;
+}
+
+.trainers p {
+    text-align: center;
+    font-size: var(--pfont);
+}
+
+
+/* card container */
+
+.cards img {
+    width: 70%;
+    border-radius: 50%;
+}
+
+.cards {
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
+    margin: 0 auto;
+    /* border: 2px solid; */
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card_cont {
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-content: center;
+}
+
+.cards>div {
+    width: 100%;
+    /* margin: auto; */
+    margin-top: 22px;
+    display: grid;
+    min-width: 180px;
+    place-items: center;
+}
+
+
+/* -------------------------------------- */
+
+
+/* ---------------------------------- */
+
+
+/* story section  */
+
+.story {
+    grid-area: story;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 3vw;
+}
+
+.story h1 {
+    font-size: var(--Hfont);
+    color: var(--mcolor);
+    margin: 0;
+}
+
+.story p {
+    font-size: var(--pfont);
+    line-height: 1.5em;
+}
+
+.Para {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.story svg {
+    width: 70%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    section {
+        background-position: center;
     }
-    
+}
+
+@media only screen and (max-width: 870px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    section {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        clip-path: polygon(50% 100%, 100% 88%, 100% 0, 0 0, 0 88%);
+    }
+    .left {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        align-items: center;
+    }
     .left p {
-        font-size: var(--pfont);
-        margin: 3em 0;
-        padding-right: 5em;
+        text-align: justify;
+        padding: 0;
     }
-    
     .btn {
-        width: 100%;
+        width: auto;
     }
-    
-    .btn a {
-        text-decoration: none;
-        color: white;
-        background-color: var(--mcolor);
-        padding: 0.5em 2.8em;
-        font-size: var(--btnfont);
-        margin-right: 1em;
-        border-radius: 2em;
+    .card_cont {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 3em;
     }
-    
-    .btn a :hover {
-        background-color: white;
+    .story {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1.5fr;
     }
-    /* trainers section */
-    /* trainer conntainer */
-    
-    .trainers {
-        /* border: 2px solid green; */
-        width: 100%;
-        height: 100%;
-        margin-top: 2em;
-        grid-area: train;
+    .Para {
+        justify-content: center;
+        align-items: center;
+    }
+    .Para p {
+        text-align: justify;
+    }
+    .svg {
         display: grid;
-        grid-template-areas: 'h1' 'card';
+        place-items: center;
     }
-    /* ---------------------------------- */
-    
+    .svg svg {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .card_cont {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-row-gap: 3em;
+    }
+    nav h1 {
+        padding: 10px 0;
+        margin: auto;
+    }
+    nav ul {
+        display: none;
+    }
+    .left h1 {
+        text-align: center;
+    }
+    .left {
+        padding: 0 1.5em;
+    }
+    .cards {
+        width: 70%;
+    }
     .cards img {
         width: 100%;
-        border-radius: 50%;
     }
-    
-    .htrainer {
-        grid-area: h1;
-        text-align: center;
-        color: var(--mcolor);
-    }
-    
-    .htrainer h1 {
-        font-size: var(--Hfont);
-    }
-    
-    .cards {
-        width: 80%;
-        /* border: 2px solid coral; */
-        border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-        margin: auto;
-        margin-top: 22px;
-    }
-    /* card container */
-    
-    .card_cont {
-        grid-area: card;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        align-content: center;
-    }
-    /* -------------------------------------- */
-    
     .cards>div {
-        width: 70%;
-        margin: auto;
-        margin-top: 22px;
-        min-width: 180px;
+        width: 60%;
     }
-    
-    .trainers p {
-        text-align: center;
-        font-size: var(--pfont);
+    .btn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    
-    @media only screen and (max-width: 1200px) {
-        section {
-            background-position: center;
-        }
+    .btn a {
+        margin: 0.5em 0.2em;
     }
-    
-    @media only screen and (max-width: 870px) {
-         :root {
-            --Hfont: 2.2rem;
-            --pfont: 1.2rem;
-            --btnfont: 1rem;
-        }
-    }
-    
-    @media only screen and (max-width: 730px) {
-        section {
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr;
-            clip-path: polygon(50% 100%, 100% 88%, 100% 0, 0 0, 0 88%);
-        }
-        .left {
-            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-            align-items: center;
-        }
-        .left p {
-            text-align: center;
-            padding: 0;
-        }
-        .btn {
-            width: auto;
-        }
-        .card_cont {
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: 1fr 1fr;
-            grid-row-gap: 3em;
-        }
-    }
-    
-    @media only screen and (max-width: 520px) {
-         :root {
-            --Hfont: 2rem;
-            --pfont: 1rem;
-            --btnfont: 0.8rem;
-        }
-    }
-    
-    @media only screen and (max-width: 440px) {
-        .card_cont {
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            grid-template-columns: 1fr;
-            grid-row-gap: 3em;
-        }
-        nav h1 {
-            padding: 10px 0;
-            margin: auto;
-        }
-        nav ul {
-            display: none;
-        }
-        .left h1 {
-            text-align: center;
-        }
-        .left {
-            padding: 0 1.5em;
-        }
-        .cards {
-            width: 70%;
-        }
-        .cards img {
-            width: 100%;
-        }
-        .cards>div {
-            width: 60%;
-            margin: auto;
-        }
-    }
+}
